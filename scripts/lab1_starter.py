@@ -22,7 +22,12 @@ class TurtlebotController:
         move_cmd = Twist()
         ######### Your code starts here #########
         # stop the TurtleBot
-
+        move_cmd.linear.x = 0
+        move_cmd.linear.y = 0
+        move_cmd.linear.z = 0
+        move_cmd.angular.x = 0
+        move_cmd.angular.y = 0
+        move_cmd.angular.z = 0
         ######### Your code ends here #########
         self.publish_twist(move_cmd, 1)  # Stop for 1 second
 
@@ -31,7 +36,7 @@ class TurtlebotController:
         move_cmd = Twist()
         ######### Your code starts here #########
         # move forward at a constant speed
-
+    
         ######### Your code ends here #########
         self.publish_twist(move_cmd, 10)  # Move forward for 10 seconds
 
